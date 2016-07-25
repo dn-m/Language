@@ -1,3 +1,4 @@
+```
 (* General *)
 whitespace = " ", "\t" (* others... *);
 letter = "a" | ... | "z" | "A" | ... | "Z";
@@ -62,4 +63,4 @@ namedpitch =
 	[eighthstepmodifier];
 
 pitch = float | namedpitch;
-
+```
