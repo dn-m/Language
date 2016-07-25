@@ -26,7 +26,6 @@ relationshipdeclaration =
 	identifier | identifiergroup,
 	[identifierdeclaration];
 
-
 relationshipoperator = 
 	bidirectionalrelationshipoperator |
 	immediateunidirectionalrelationshipoperator |
@@ -34,7 +33,8 @@ relationshipoperator =
 
 bidirectionalrelationshipoperator = "<>"
 immediateunidirectionalrelationshipoperator = "->"
-delayedunidirectionalrelationshipoperator = "~>" (* TODO: extend to specify delay by any time interval type *)
+delayedunidirectionalrelationshipoperator = "~>" 
+(* TODO: extend to specify delay by any time interval type *)
 
 (* Metrical Duration *)
 metricalduration = int, ",", int;
@@ -60,10 +60,12 @@ halfstepindicator = sharp | flat;
 eighthstepup = "up";
 eighthstepdown = "down";
 eighthstepmodifier = eighthstepup | eighthstepdown;
+octave = digit;
 namedpitch = 
 	lettername, 
 	[([quarterstepmodifier] halfstepindicator)], 
-	[eighthstepmodifier];
+	[eighthstepmodifier]
+	[octave];
 
 pitch = float | namedpitch;
 
