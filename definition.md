@@ -8,7 +8,11 @@ identifier = letter, { letter | digit | "_" };
 identifierdeclaration = ":", whitespace, identifier;
 
 (* Structure *)
-section = "$", [identifierdeclaration]
+section = "$", [identifierdeclaration];
+measure = "#", [metricalduration], [identifierdeclaration];
+
+(* Metrical Duration *)
+metricalduration = int, ",", int;
 
 (* Pitch *)
 lettername = "a" | ... | "g" | "A" | ... | "Z" 
