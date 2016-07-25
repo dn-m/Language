@@ -14,6 +14,24 @@ identifierdeclaration = ":", whitespace, identifier;
 section = "$", [identifierdeclaration];
 measure = "#", [metricalduration], [identifierdeclaration];
 
+(* Relationship *)
+relationshipdeclaration = 
+	identifier, 
+	whitespace, 
+	relationshipoperator, 
+	whitespace,
+	identifier,
+	[identifierdeclaration];
+
+relationshipoperator = 
+	bidirectionalrelationshipoperator |
+	immediateunidirectionalrelationshipoperator |
+	delayedunidirectionalrelationshipoperator;
+
+bidirectionalrelationshipoperator = "<>"
+immediateunidirectionalrelationshipoperator = "->"
+delayedunidirectionalrelationshipoperator = "~>" (* TODO: extend to specify delay by any time interval type *)
+
 (* Metrical Duration *)
 metricalduration = int, ",", int;
 (* e.g., 2,16 *)
@@ -23,6 +41,9 @@ metricaldurationcontainer =
 	[identifier, identifier], 
 	[identifierdeclaration];
 (* e.g., 3,16 PerfID InstrID: EventID *)
+
+(* Element *)
+element = pitch; (* TODO: extend *)
 
 (* Pitch *)
 lettername = 
@@ -38,8 +59,7 @@ eighthstepmodifier = eighthstepup | eighthstepdown;
 namedpitch = 
 	lettername, 
 	[([quarterstepmodifier] halfstepindicator)], 
-	[eighthstepmodifier]
-;
+	[eighthstepmodifier];
 
 pitch = float | namedpitch;
 
