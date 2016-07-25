@@ -1,9 +1,13 @@
 (* General *)
 whitespace = " ", "\t" (* others... *);
 letter = "a" | ... | "z" | "A" | ... | "Z"; 
-digit = "0" | ... | "9";
-int = { digit };
-float = { digit } , ".", { digit };
+digit = "0" | nonzerodigit;
+nonzerodigit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"; 
+zero = "0";
+naturalnumber = nonzerodigit, { digit }
+int = ["-"], naturalnumber ;
+float = { naturalnumber } , ".", { naturalnumber };
+
 identifier = letter, { letter | digit | "_" };
 identifierdeclaration = ":", whitespace, identifier;
 
@@ -13,6 +17,11 @@ measure = "#", [metricalduration], [identifierdeclaration];
 
 (* Metrical Duration *)
 metricalduration = int, ",", int;
+metricaldurationcontainer = 
+	metricalduration, 
+	[identifier, identifier], 
+	[identifierdeclaration]
+;
 
 (* Pitch *)
 lettername = "a" | ... | "g" | "A" | ... | "Z" 
