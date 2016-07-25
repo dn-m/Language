@@ -1,4 +1,5 @@
 ```
+
 (* General *)
 whitespace = " ", "\t" (* others... *);
 letter = "a" | ... | "z" | "A" | ... | "Z";
@@ -7,7 +8,7 @@ nonzerodigit = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 zero = "0";
 naturalnumber = nonzerodigit, { digit };
 int = ["-"], naturalnumber;
-float = ["-"], { naturalnumber } , ".", { naturalnumber };
+float = ["-"], naturalnumber , ".", naturalnumber;
 identifier = letter, { letter | digit | "_" };
 identifierdeclaration = ":", whitespace, identifier;
 
@@ -63,4 +64,5 @@ namedpitch =
 	[eighthstepmodifier];
 
 pitch = float | namedpitch;
+
 ```
