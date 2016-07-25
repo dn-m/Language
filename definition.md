@@ -16,14 +16,18 @@ measure = "#", [metricalduration], [identifierdeclaration];
 
 (* Metrical Duration *)
 metricalduration = int, ",", int;
+(* e.g., 2,16 *)
+
 metricaldurationcontainer = 
 	metricalduration, 
 	[identifier, identifier], 
-	[identifierdeclaration]
-;
+	[identifierdeclaration];
+(* e.g., 3,16 PerfID InstrID: EventID *)
 
 (* Pitch *)
-lettername = "a" | ... | "g" | "A" | ... | "Z" 
+lettername = 
+	"a" | "b" | "c" | "d" | "e" | "f" | "g" | 
+	"A" | "B" | "C" | "D" | "E" | "F" | "G";
 quarterstepmodifier = "1/4" | "q" | "qtr" | "quarter";
 sharp = "#" | "sharp";
 flat = "b" | "flat";
