@@ -7,7 +7,6 @@ zero = "0";
 naturalnumber = nonzerodigit, { digit }
 int = ["-"], naturalnumber ;
 float = { naturalnumber } , ".", { naturalnumber };
-
 identifier = letter, { letter | digit | "_" };
 identifierdeclaration = ":", whitespace, identifier;
 
