@@ -15,7 +15,7 @@ identifier-group = "(", identifier, {",", identifier}, ")";
 
 (* Structure *)
 section = "$", [identifier-declaration];
-measure = "#", [metricalduration], [identifier-declaration];
+measure = "#", [metrical-duration], [identifier-declaration];
 
 (* Relationship *)
 relationshipdeclaration = 
@@ -37,11 +37,11 @@ delayedunidirectionalrelationship-operator = "~>"
 (* TODO: extend to specify delay by any time interval type *)
 
 (* Metrical Duration *)
-metricalduration = int, ",", int;
+metrical-duration = int, ",", int;
 (* e.g., 2,16 *)
 
 metricaldurationcontainer = 
-	metricalduration, 
+	metrical-duration, 
 	[identifier, identifier], 
 	[identifier-declaration];
 (* e.g., 3,16 PerfID InstrID: EventID *)
