@@ -27,13 +27,13 @@ relationshipdeclaration =
 	[identifier-declaration];
 
 relationship-operator = 
-	bidirectionalrelationship-operator |
-	immediateunidirectionalrelationship-operator |
-	delayedunidirectionalrelationship-operator;
+	bidirectional-relationship-operator |
+	immediate-unidirectional-relationship-operator |
+	delayed-unidirectional-relationship-operator;
 
-bidirectionalrelationship-operator = "<>"
-immediateunidirectionalrelationship-operator = "->"
-delayedunidirectionalrelationship-operator = "~>" 
+bidirectional-relationship-operator = "<>"
+immediate-unidirectional-relationship-operator = "->"
+delayed-unidirectional-relationship-operator = "~>" 
 (* TODO: extend to specify delay by any time interval type *)
 
 (* Metrical Duration *)
@@ -53,20 +53,20 @@ element = pitch; (* TODO: extend *)
 letter-name = 
 	"a" | "b" | "c" | "d" | "e" | "f" | "g" | 
 	"A" | "B" | "C" | "D" | "E" | "F" | "G";
-quarterstepmodifier = "1/4" | "q" | "qtr" | "quarter";
+quarter-step-modifier = "1/4" | "q" | "qtr" | "quarter";
 sharp = "#" | "sharp";
 flat = "b" | "flat";
-halfstepmodifier = sharp | flat;
-eighthstepup = "up";
-eighthstepdown = "down";
-eighthstepmodifier = eighthstepup | eighthstepdown;
+half-step-modifier = sharp | flat;
+eighth-step-up = "up";
+eighth-step-down = "down";
+eighth-step-modifier = eighth-step-up | eighth-step-down;
 octave = digit;
-namedpitch = 
+named-pitch = 
 	letter-name, 
-	[([quarterstepmodifier] halfstepmodifier)], 
-	[eighthstepmodifier]
+	[([quarter-step-modifier] half-step-modifier)], 
+	[eighth-step-modifier]
 	[octave];
 
-pitch = float | namedpitch;
+pitch = float | named-pitch;
 
 ```
