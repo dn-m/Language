@@ -11,7 +11,7 @@ int = ["-"], natural-number;
 float = ["-"], natural-number , ".", natural-number;
 identifier = letter, { letter | digit | "_" };
 identifier-declaration = ":", whitespace, identifier;
-identifiergroup = "(", identifier, {",", identifier}, ")";
+identifier-group = "(", identifier, {",", identifier}, ")";
 
 (* Structure *)
 section = "$", [identifier-declaration];
@@ -19,11 +19,11 @@ measure = "#", [metricalduration], [identifier-declaration];
 
 (* Relationship *)
 relationshipdeclaration = 
-	identifier | identifiergroup,
+	identifier | identifier-group,
 	whitespace, 
 	relationshipoperator, 
 	whitespace,
-	identifier | identifiergroup,
+	identifier | identifier-group,
 	[identifier-declaration];
 
 relationshipoperator = 
