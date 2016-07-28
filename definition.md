@@ -50,7 +50,7 @@ metrical-duration-container =
 element = pitch; (* TODO: extend *)
 
 (* Pitch *)
-lettername = 
+letter-name = 
 	"a" | "b" | "c" | "d" | "e" | "f" | "g" | 
 	"A" | "B" | "C" | "D" | "E" | "F" | "G";
 quarterstepmodifier = "1/4" | "q" | "qtr" | "quarter";
@@ -62,7 +62,7 @@ eighthstepdown = "down";
 eighthstepmodifier = eighthstepup | eighthstepdown;
 octave = digit;
 namedpitch = 
-	lettername, 
+	letter-name, 
 	[([quarterstepmodifier] halfstepmodifier)], 
 	[eighthstepmodifier]
 	[octave];
