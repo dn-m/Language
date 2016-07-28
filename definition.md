@@ -40,7 +40,7 @@ delayedunidirectionalrelationship-operator = "~>"
 metrical-duration = int, ",", int;
 (* e.g., 2,16 *)
 
-metricaldurationcontainer = 
+metrical-duration-container = 
 	metrical-duration, 
 	[identifier, identifier], 
 	[identifier-declaration];
