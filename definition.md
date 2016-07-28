@@ -10,12 +10,12 @@ natural-number = { digit };
 int = ["-"], natural-number;
 float = ["-"], natural-number , ".", natural-number;
 identifier = letter, { letter | digit | "_" };
-identifierdeclaration = ":", whitespace, identifier;
+identifier-declaration = ":", whitespace, identifier;
 identifiergroup = "(", identifier, {",", identifier}, ")";
 
 (* Structure *)
-section = "$", [identifierdeclaration];
-measure = "#", [metricalduration], [identifierdeclaration];
+section = "$", [identifier-declaration];
+measure = "#", [metricalduration], [identifier-declaration];
 
 (* Relationship *)
 relationshipdeclaration = 
@@ -24,7 +24,7 @@ relationshipdeclaration =
 	relationshipoperator, 
 	whitespace,
 	identifier | identifiergroup,
-	[identifierdeclaration];
+	[identifier-declaration];
 
 relationshipoperator = 
 	bidirectionalrelationshipoperator |
@@ -43,7 +43,7 @@ metricalduration = int, ",", int;
 metricaldurationcontainer = 
 	metricalduration, 
 	[identifier, identifier], 
-	[identifierdeclaration];
+	[identifier-declaration];
 (* e.g., 3,16 PerfID InstrID: EventID *)
 
 (* Element *)
