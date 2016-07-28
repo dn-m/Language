@@ -56,14 +56,14 @@ lettername =
 quarterstepmodifier = "1/4" | "q" | "qtr" | "quarter";
 sharp = "#" | "sharp";
 flat = "b" | "flat";
-halfstepindicator = sharp | flat;
+halfstepmodifier = sharp | flat;
 eighthstepup = "up";
 eighthstepdown = "down";
 eighthstepmodifier = eighthstepup | eighthstepdown;
 octave = digit;
 namedpitch = 
 	lettername, 
-	[([quarterstepmodifier] halfstepindicator)], 
+	[([quarterstepmodifier] halfstepmodifier)], 
 	[eighthstepmodifier]
 	[octave];
 
