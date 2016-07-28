@@ -21,19 +21,19 @@ measure = "#", [metricalduration], [identifier-declaration];
 relationshipdeclaration = 
 	identifier | identifier-group,
 	whitespace, 
-	relationshipoperator, 
+	relationship-operator, 
 	whitespace,
 	identifier | identifier-group,
 	[identifier-declaration];
 
-relationshipoperator = 
-	bidirectionalrelationshipoperator |
-	immediateunidirectionalrelationshipoperator |
-	delayedunidirectionalrelationshipoperator;
+relationship-operator = 
+	bidirectionalrelationship-operator |
+	immediateunidirectionalrelationship-operator |
+	delayedunidirectionalrelationship-operator;
 
-bidirectionalrelationshipoperator = "<>"
-immediateunidirectionalrelationshipoperator = "->"
-delayedunidirectionalrelationshipoperator = "~>" 
+bidirectionalrelationship-operator = "<>"
+immediateunidirectionalrelationship-operator = "->"
+delayedunidirectionalrelationship-operator = "~>" 
 (* TODO: extend to specify delay by any time interval type *)
 
 (* Metrical Duration *)
